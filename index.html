@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>A Simple Weather App</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 40px">
+      <div class="">
+        <div class="form-group row">
+          <label for="zipcode" class="col-sm-2 col-form-label"
+            >Enter Zipcode</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="zipcode"
+              placeholder="Zipcode"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <input
+              type="button"
+              class="btn btn-primary"
+              value="Show Weather"
+              id="weather"
+            />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="card-deck pt-4">
+        <div class="card text-white bg-info">
+          <div class="card-header">City</div>
+          <div class="card-body">
+            <p class="card-text">Name : <span id="city-name"></span></p>
+            <p class="card-text">Latitude : <span id="lat"></span></p>
+            <p class="card-text">Longitude : <span id="lon"></span></p>
+          </div>
+        </div>
+        <div class="card text-white bg-secondary">
+          <div class="card-header">Weather</div>
+          <div class="card-body">
+            <p class="card-text">Main : <span id="weather-main"></span></p>
+            <p class="card-text">
+              Description : <span id="weather-desc"></span>
+            </p>
+          </div>
+        </div>
+        <div class="card text-white bg-success">
+          <div class="card-header">Wind</div>
+          <div class="card-body">
+            <p class="card-text">Speed : <span id="wind-speed"></span></p>
+            <p class="card-text">Degree : <span id="wind-degree"></span></p>
+          </div>
+        </div>
+        <div class="card text-white bg-dark">
+          <div class="card-header">Temperature</div>
+          <div class="card-body">
+            <p class="card-text">Current : <span id="temp-current"></span></p>
+            <p class="card-text">Minimum : <span id="temp-min"></span></p>
+            <p class="card-text">Maximum : <span id="temp-max"></span></p>
+            <p class="card-text">Humidity : <span id="humidity"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
