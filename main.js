@@ -1,15 +1,19 @@
+// console.log('in Javascript');
 $(document).ready(function () {
+  //   console.log('in ready function');
   $('#weather').click(function () {
+    // console.log('in click event');
     var zipcode = $('#zipcode').val();
 
     if (zipcode != '') {
+      //   console.log('before call');
       $.ajax({
         url:
           'https://api.openweathermap.org/data/2.5/weather?zip=' +
           zipcode +
           '&units=imperial' +
           '&appid=b22ef57471e99e0551f0828734a0ad18',
-
+        // url:"https://api.openweathermap.org/data/2.5/weather?zip=06468&units=imperial&appid=b22ef57471e99e0551f0828734a0ad18",
         type: 'GET',
         dataType: 'jsonp',
         success: function (data) {
@@ -26,7 +30,7 @@ $(document).ready(function () {
           $('#temp-max').text(data.main.temp_max);
           $('#humidity').text(data.main.humidity);
         },
-        error: function (xhr) {
+        error: function (xhr, status, error) {
           var errorMessage = xhr.status + ': ' + xhr.statusText;
           alert('Error - ' + errorMessage);
         },
@@ -34,3 +38,9 @@ $(document).ready(function () {
     }
   });
 });
+
+// error: function (xhr, status, error) {
+//     var errorMessage = xhr.status + ' + xhr.responseText';
+//     alert('Error - ' + errorMessage);
+// }
+// }
